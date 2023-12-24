@@ -1,0 +1,28 @@
+stages:             # these stages (jobs) forms the CICD pipeline
+  - androidbuild    # this is a JOB to build your Android application
+  - androidtest     # this is a JOB to run tests in your Android application (it's okay you don't have any test for now)
+
+android-build:
+  image: afirefly/android-ci:java17
+  stage: androidbuild
+  tags:
+   - lincoln_tag                   # <-- change to your runner's tag
+  before_script:                    # change 'Frontend' to where you have 'gradlew'
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./Frontend/Hooks_And_Rooks/gradlew
+  script:
+    - cd Frontend/Hooks_And_Rooks                   # change 'Frontend' to where you have 'gradlew' (do not add / in the beginning)
+    - ./gradlew build
+
+
+android-test:
+   image: afirefly/android-ci:java17
+   stage: androidtest
+   tags:
+    - lincoln_tag                  # <-- change to your runner's tag
+   before_script:                   # change 'Frontend' to where you have 'gradlew'
+     - export GRADLE_USER_HOME=`pwd`/.gradle
+     - chmod +x ./Frontend/Hooks_And_Rooks/gradlew
+   script:
+     - cd Frontend/Hooks_And_Rooks                    # change 'Frontend' to where you have 'gradlew' (do not add / in the beginning)
+     - ./gradlew test

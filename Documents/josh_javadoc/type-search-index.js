@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.example.androidexample","l":"MainActivity"},{"p":"com.example.androidexample","l":"WebSocketManager.MyWebSocketClient"},{"p":"com.example.androidexample","l":"WebSocketListener"},{"p":"com.example.androidexample","l":"WebSocketManager"}];updateSearchResults();
