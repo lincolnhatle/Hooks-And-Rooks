@@ -15,13 +15,13 @@ public class BoxingUnitTest {
     @Test
     public void BlockIsCorrect() {
         BoxingActivity activity = new BoxingActivity();
-        activity.moves = "Block";
-        activity.oppMoves = "Jab";
+        activity.move = "Block";
+        activity.oppmove = "Jab";
 
         assertEquals(activity.win, true);
 
-        activity.moves = "Jab";
-        activity.oppMoves = "Block";
+        activity.move = "Jab";
+        activity.oppmove = "Block";
 
         assertEquals(activity.lose, true);
 
@@ -30,26 +30,26 @@ public class BoxingUnitTest {
     @Test
     public void JabIsCorrect() {
         BoxingActivity activity = new BoxingActivity();
-        activity.moves = "Jab";
-        activity.oppMoves = "Upper";
+        activity.move = "Jab";
+        activity.oppmove = "Upper";
 
         assertEquals(activity.win, true);
 
-        activity.moves = "Upper";
-        activity.oppMoves = "Jab";
+        activity.move = "Upper";
+        activity.oppmove = "Jab";
 
         assertEquals(activity.lose, true);
     }
     @Test
     public void UpperIsCorrect() {
         BoxingActivity activity = new BoxingActivity();
-        activity.moves = "Upper";
-        activity.oppMoves = "Block";
+        activity.move = "Upper";
+        activity.oppmove = "Block";
 
         assertEquals(activity.win, true);
 
-        activity.moves = "Block";
-        activity.oppMoves = "Upper";
+        activity.move = "Block";
+        activity.oppmove = "Upper";
 
         assertEquals(activity.lose, true);
     }
